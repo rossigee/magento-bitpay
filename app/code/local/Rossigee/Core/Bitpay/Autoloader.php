@@ -8,7 +8,7 @@
  */
 
 /**
- * @package Bitpay
+ * @package Rossigee_Core_Bitpay
  */
 class Rossigee_Core_BitPay_Autoloader
 {
@@ -56,7 +56,7 @@ class Rossigee_Core_BitPay_Autoloader
         if (0 === strpos($class, 'Bitpay\\')) {
             $classname = substr($class, 7);
 
-            $vendor_dir = getenv("MAGE_PROJECT_DIR") . DIRECTORY_SEPARATOR . join(DIRECTORY_SEPARATOR, array("vendor", "bitpay", "php-client", "src"));
+            $vendor_dir = getenv("MAGE_PROJECT_DIR") . DIRECTORY_SEPARATOR . join(DIRECTORY_SEPARATOR, array("vendor", "bitpay", "php-client", "src", "Bitpay"));
             $file = $vendor_dir . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $classname) . '.php';
 
             if (is_file($file) && is_readable($file)) {
@@ -65,7 +65,7 @@ class Rossigee_Core_BitPay_Autoloader
                 return true;
             }
 
-            $mage_lib_dir = getenv("MAGE_DOC_ROOT") . DIRECTORY_SEPARATOR. join(DIRECTORY_SEPARATOR, array("lib"));
+            $mage_lib_dir = getenv("MAGE_DOC_ROOT") . DIRECTORY_SEPARATOR. join(DIRECTORY_SEPARATOR, array("lib", "Bitpay"));
             $file = $mage_lib_dir . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $classname) . '.php';
 
             if (is_file($file) && is_readable($file)) {
@@ -78,3 +78,4 @@ class Rossigee_Core_BitPay_Autoloader
         }
     }
 }
+
