@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <events>
+            <resource_get_tablename>
+                <observers>
+                    <Rossigee_Core>
+                        <type>singleton</type>
+                        <class>Rossigee_Core_Model_Observer</class>
+                        <method>addAutoloader</method>
+                    </Rossigee_Core>
+                </observers>
+            </resource_get_tablename>
+        </events>
+    </global>
+</config>

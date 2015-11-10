@@ -1,3 +1,4 @@
 app/code/local/Rossigee/Core/Bitpay/Autoloader.php app/code/local/Rossigee/Core/Bitpay/Autoloader.php
 app/code/local/Rossigee/Core/Model/Observer.php app/code/local/Rossigee/Core/Model/Observer.php
-
+app/code/local/Rossigee/Core/etc/config.xml app/code/local/Rossigee/Core/etc/config.xml
+app/etc/modules/Rossigee_Core.xml app/etc/modules/Rossigee_Core.xml
