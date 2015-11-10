@@ -1,0 +1,3 @@
+app/code/local/Rossigee/Core/Bitpay/Autoloader.php app/code/local/Rossigee/Core/Bitpay/Autoloader.php
+app/code/local/Rossigee/Core/Model/Observer.php app/code/local/Rossigee/Core/Model/Observer.php
+
