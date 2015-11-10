@@ -12,9 +12,6 @@
  */
 class Rossigee_Core_BitPay_Autoloader
 {
-    static $vendor_dir = getenv("MAGE_PROJECT_DIR") . DIRECTORY_SEPARATOR . join(DIRECTORY_SEPARATOR, array("vendor", "bitpay", "php-client", "src"));
-    static $mage_lib_dir = getenv("MAGE_DOC_ROOT") . DIRECTORY_SEPARATOR. join(DIRECTORY_SEPARATOR, array("lib"));
-
     /**
      * Register the autoloader, by default this will put the BitPay autoloader
      * first on the stack, to append the autoloader, pass `false` as an argument.
@@ -59,7 +56,8 @@ class Rossigee_Core_BitPay_Autoloader
         if (0 === strpos($class, 'Bitpay\\')) {
             $classname = substr($class, 7);
 
-            $file = self::$vendor_dir . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $classname) . '.php';
+            $vendor_dir = getenv("MAGE_PROJECT_DIR") . DIRECTORY_SEPARATOR . join(DIRECTORY_SEPARATOR, array("vendor", "bitpay", "php-client", "src"));
+            $file = $vendor_dir . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $classname) . '.php';
 
             if (is_file($file) && is_readable($file)) {
                 require_once $file;
@@ -67,7 +65,8 @@ class Rossigee_Core_BitPay_Autoloader
                 return true;
             }
 
-            $file = self::$mage_lib_dir . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $classname) . '.php';
+            $mage_lib_dir = getenv("MAGE_DOC_ROOT") . DIRECTORY_SEPARATOR. join(DIRECTORY_SEPARATOR, array("lib"));
+            $file = $mage_lib_dir . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $classname) . '.php';
 
             if (is_file($file) && is_readable($file)) {
                 require_once $file;
