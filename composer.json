@@ -5,7 +5,6 @@
     "homepage": "https://github.com/rossigee/magento-bitpay",
     "license": "MIT",
     "require": {
-        "magento-hackathon/magento-composer-installer": "3.*",
         "bitpay/magento-plugin": "2.1.10.2",
         "bitpay/php-client": "dev-master#9027ce67e4b28516ff1ebd1046bdd15c37a7a59f"
     }
